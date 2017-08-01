@@ -7,7 +7,9 @@
 	<body>
 		<script type="text/javascript">
 			var str = "123456@qq.com";
-			var reg = //
+			var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+			console.log(str.match(reg));
+			//当一个字符串与一个正则表达式匹配时， match()方法检索匹配项。
 		</script>
 	</body>
 </html>
