@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//						var obj = {
+			//							myname: "aaa",
+			//							eat: function() {
+			//								console.log(this.myname); //aaa
+			//								
+			//								setTimeout(function() {
+			//									console.log(this.myname); //undefined
+			//								}, 1000);
+			//								
+			//							}
+			//						};
+			//			
+			//						obj.eat();
+
+			//			window.val = 1;
+			//			var obj = {
+			//				val: 2,
+			//				dbl: function() {
+			//					this.val *= 2;
+			//					val *= 2;
+			//					console.log(val);
+			//					console.log(this.val);
+			//				}
+			//			};
+			//			// 说出下面的输出结果
+			//			obj.dbl();
+			//			//2  4 
+			//			
+			//			var func = obj.dbl;
+			//			func();
+			//			// 4  4
+
+			//			function identify() {
+			//				return this.name.toUpperCase();
+			//			}
+
+			//			function speak() {
+			//				var greeting = "你好，我是" + identify.call(this);
+			//				console.log(greeting);
+			//			}
+			//			
+			//			var me = {
+			//				name: "Alex"
+			//			};
+			//			
+			//			var you = {
+			//				name: "Reader"
+			//			};
+			//
+			//
+			//			console.log(identify.call(me)); //ALEX
+			//			console.log(identify.call(you));//READER
+			//
+			//			console.log(speak.call(me));  //     undefined
+			//			console.log(speak.call(you));  //    undefined
+
+			var s2 = 0;
+
+			function Timer() {
+				this.s1 = 0;
+				this.s2 = 0;
+
+				setInterval(() => this.s1++, 1000);
+
+				setInterval(function() {
+					this.s2++;
+				}, 1000);
+			}
+			var timer = new Timer();
+			setTimeout(() => console.log('timer.s1: ', timer.s1), 3100);//timer.s1: 3
+			setTimeout(() => console.log('timer.s2: ', timer.s2), 3100);//timer.s2: 0
+			setTimeout(() => console.log('window.s2: ', window.s2), 3100);//window.s2: 3
+		</script>
+	</body>
+
+</html>
