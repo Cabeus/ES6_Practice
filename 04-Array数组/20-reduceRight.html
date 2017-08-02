@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			let flattened = [
+				[0, 1],
+				[2, 3],
+				[4, 5]
+			].reduceRight((a, b) => {
+				return a.concat(b);
+			}, []);
+
+			// flattened is [4, 5, 2, 3, 0, 1]
+			//从右到左   将其减少为一个单值
+			
+		</script>
+	</body>
+
+</html>
