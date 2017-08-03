@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>values() 方法返回一个新的 Array Iterator 对象，该对象包含数组每个索引的值。</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var obj = {
+				name :"zzzz",
+				age :18,
+				height: "163"
+			};
+			var arr =Object.values(obj);
+			for(var a of arr){
+				console.log(a)
+			}
+		</script>
+	</body>
+</html>
